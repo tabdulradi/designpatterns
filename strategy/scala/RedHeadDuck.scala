@@ -1,11 +1,6 @@
 package com.abdulradi.designpatterns.strategy
 
-class RedHeadDuck extends Duck {
-  flyBehavior = new FlyWithWings()
-
-  quackBehavior = new Quack()
-
-  def display() {
+case class RedHeadDuck(flyBehavior: FlyBehavior = new FlyWithWings(), quackBehavior: QuackBehavior = new Quack()) extends Duck {
+  def display() =
     println("I'm a real Red Headed duck")
-  }
 }

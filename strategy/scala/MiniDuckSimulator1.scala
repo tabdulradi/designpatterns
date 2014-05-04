@@ -4,14 +4,14 @@ object MiniDuckSimulator1 {
  
   def main(args: Seq[String]) {
  
-    val mallard = new MallardDuck()
+    val mallard = MallardDuck()
     mallard.performQuack()
     mallard.performFly()
    
-    val model = new ModelDuck()
+    val model = ModelDuck()
     model.performFly()
-    model.setFlyBehavior(new FlyRocketPowered())
-    model.performFly()
+    val model2 = model.copy(flyBehavior = new FlyRocketPowered())
+    model2.performFly()
 
   }
 }

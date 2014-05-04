@@ -1,11 +1,6 @@
 package com.abdulradi.designpatterns.strategy
 
-class ModelDuck extends Duck {
-  
-  flyBehavior = new FlyNoWay()
-  quackBehavior = new Quack()
-
-  def display() = {
-    System.out.println("I'm a model duck");
-  }
+case class ModelDuck(flyBehavior: FlyBehavior = new FlyNoWay(), quackBehavior: QuackBehavior = new Quack()) extends Duck {  
+  def display() = 
+    System.out.println("I'm a model duck");  
 }

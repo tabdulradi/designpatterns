@@ -1,17 +1,11 @@
 package com.abdulradi.designpatterns.strategy
 
 abstract class Duck {
-  var flyBehavior: FlyBehavior = _
-  var quackBehavior: QuackBehavior = _
+
+  val flyBehavior: FlyBehavior
+
+  val quackBehavior: QuackBehavior
   
-  def setFlyBehavior(fb: FlyBehavior): Unit = {
-    flyBehavior = fb
-  }
-
-  def setQuackBehavior(qb: QuackBehavior): Unit = {
-    quackBehavior = qb
-  }
-
   def display(): Unit
 
   def performFly() = 

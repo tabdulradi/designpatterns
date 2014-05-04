@@ -1,10 +1,6 @@
 package com.abdulradi.designpatterns.strategy
 
-class RubberDuck extends Duck {
-  flyBehavior = new FlyNoWay()
-  quackBehavior = new Squeak()
-
-  def display() = {
+case class RubberDuck(flyBehavior: FlyBehavior = new FlyNoWay(), quackBehavior: QuackBehavior = new Squeak()) extends Duck {
+  def display() = 
     println("I'm a rubber duckie")
-  }
 }
