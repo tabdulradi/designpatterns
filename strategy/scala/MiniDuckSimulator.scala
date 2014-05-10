@@ -6,11 +6,11 @@ object MiniDuckSimulator {
     val rubberDuckie = RubberDuck()
     val decoy = DecoyDuck()
     val model = ModelDuck()
-    mallard.performQuack()
-    rubberDuckie.performQuack()
-    decoy.performQuack()
-    model.performFly()
-    val model2 = model.copy(flyBehavior = new FlyRocketPowered())
-    model2.performFly()
+    mallard.quack()
+    rubberDuckie.quack()
+    //decoy.quack() // // Won't compile, because we are sure a decoy duck won't quack
+    // model.fly() // Won't compile, because we are sure a model duck can't fly...
+    val model2 = new ModelDuck with Quack with FlyRocketPowered // unless we add rockets!
+    model2.fly()
   }
 }

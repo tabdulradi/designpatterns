@@ -4,14 +4,14 @@ object MiniDuckSimulator1 {
  
   def main(args: Seq[String]) {
  
-    val mallard = MallardDuck()
-    mallard.performQuack()
-    mallard.performFly()
+    val mallard = new MallardDuck with FlyWithWings with Quack
+    mallard.quack()
+    mallard.fly()
    
-    val model = ModelDuck()
-    model.performFly()
-    val model2 = model.copy(flyBehavior = new FlyRocketPowered())
-    model2.performFly()
+    val model = new ModelDuck() with Quack
+    // model.fly() // Won't compile, because we are sure a model duck can't fly...
+    val model2 = new ModelDuck with Quack with FlyRocketPowered // unless we add rockets!
+    model2.fly()
 
   }
 }

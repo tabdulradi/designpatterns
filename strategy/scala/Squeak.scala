@@ -1,7 +1,6 @@
 package com.abdulradi.designpatterns.strategy
 
-class Squeak extends QuackBehavior {
-  def quack() = {
+trait Squeak extends QuackBehavior {
+  def quack() = 
     println("Squeak")
-  }
 }
